@@ -1,0 +1,17 @@
+html {
+    background-color: darkgray;
+    color: darkblue;
+}
+
+body form, body {
+    background-color: beige;
+}
+
+button {
+    margin: 15px 0;
+}
+
+ul.list-group {
+    margin: 20px;
+    width: calc(100% - 40px);
+}
