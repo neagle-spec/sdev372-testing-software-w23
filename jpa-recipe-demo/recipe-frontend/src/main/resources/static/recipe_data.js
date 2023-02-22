@@ -1,5 +1,9 @@
+
+
 //run this function on page load
 window.onload = function() {
+
+
     //load the recipes
     loadRecipes();
 
@@ -48,7 +52,7 @@ function loadRecipes()
     let uri = "http://localhost:8080/recipes";
     let params = {
         method: "get",
-        mode: "cors"
+        // mode: "cors"
     };
 
     fetch(uri, params)
