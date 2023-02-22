@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("recipes") //all paths start with "recipes"
 public class RecipeApi
@@ -44,6 +45,11 @@ public class RecipeApi
     @PostMapping("")
     public ResponseEntity<Recipe> addRecipe(@RequestBody Recipe recipe)
     {
+        if(!service.isValidRecipe(recipe))
+        {
+            // no response body, status code 400
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<>(service.addRecipe(recipe), HttpStatus.CREATED);
     }
 
